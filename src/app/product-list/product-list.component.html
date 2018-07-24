@@ -1,0 +1,20 @@
+<div class="container-fluid">
+  <div class="card bg-info">
+    <h4 class="card-title">
+        {{pageTitle | uppercase}}
+    </h4>
+  </div>
+  <div class="row">
+    <div class="col-md-3" *ngFor="let product of products">
+      <div class="card card-height">
+          <div class="card-image">
+            <img class="img-responsive" [src]="product.imageUrl" [title]="product.productCategory"
+            [style.width]='imageWidth' [style.height]='imageHeight' [style.margin]='imageMargin'>
+          </div>
+          <div class="card-action">
+            <button class="btn btn-warning" (click)='categorySelected(product.productCategory)'>{{product.productCategory}}</button>
+          </div>
+        </div>
+      </div>
+  </div>
+</div>
